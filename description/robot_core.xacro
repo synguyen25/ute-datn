@@ -43,25 +43,25 @@
     <joint name="chassis_joint" type="fixed">
         <parent link="base_link"/>
         <child link="chassis"/>
-        <origin xyz="-0.1 0 0"/>
+        <origin xyz="-0.06 0 0"/>
     </joint>
 
     <link name="chassis">
         <visual>
-            <origin xyz="0.15 0 0.05"/>
+            <origin xyz="0.12 0 0.06"/>
             <geometry>
                 <cylinder radius="0.2" length="0.1"/>
             </geometry>
             <material name="white"/>
         </visual>
         <collision>
-            <origin xyz="0.15 0 0.05"/>
+            <origin xyz="0.12 0 0.06"/>
             <geometry>
-                <cylinder radius="0.2" length="0.1"/>
+                <cylinder radius="0.225" length="0.1"/>
             </geometry>
         </collision>
-        <xacro:inertial_cylinder mass="5.0" radius="0.2" length="0.1">
-            <origin xyz="0.15 0 0.05" rpy="0 0 0"/>
+        <xacro:inertial_cylinder mass="5.0" radius="0.225" length="0.1">
+            <origin xyz="0.12 0 0.06" rpy="0 0 0"/>
         </xacro:inertial_cylinder> 
     </link>
     <gazebo reference="chassis">
@@ -72,7 +72,7 @@
     <joint name="left_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="left_wheel"/>
-        <origin xyz="0 0.15 0" rpy="-${pi/2} 0 0" /> 
+        <origin xyz="0 0.146 0" rpy="-${pi/2} 0 0" /> 
         <!-- XYZ la vi tri banh xe cach tam base link, xoay cylinder banh1 goc -pi/2(90do)-->   
         <axis xyz="0 0 1"/>
         <!-- axis "1" va "-1" laf truc banh xe chuyen dong tien-lui quanh truc z-->
@@ -81,16 +81,16 @@
     <link name="left_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.05" length="0.04"/>
+                <cylinder radius="0.0325" length="0.026"/>
             </geometry>
             <material name="blue"/>
         </visual>
         <collision>
             <geometry>
-                <cylinder radius="0.05" length="0.04"/>
+                <cylinder radius="0.0325" length="0.026"/>
             </geometry>
         </collision> 
-        <xacro:inertial_cylinder mass="0.1" length="0.04" radius="0.05">
+        <xacro:inertial_cylinder mass="0.1" length="0.026" radius="0.0325">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder> 
     </link>
@@ -102,23 +102,23 @@
     <joint name="right_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="right_wheel"/>
-        <origin xyz="0 -0.15 0" rpy="${pi/2} 0 0" />
+        <origin xyz="0 -0.146 0" rpy="${pi/2} 0 0" />
         <axis xyz="0 0 -1"/>
     </joint>
 
     <link name="right_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.05" length="0.04"/>
+                <cylinder radius="0.0325" length="0.026"/>
             </geometry>
             <material name="blue"/>
         </visual>
         <collision>
             <geometry>
-                <cylinder radius="0.05" length="0.04"/>
+                <cylinder radius="0.0325" length="0.026"/>
             </geometry>
         </collision> 
-        <xacro:inertial_cylinder mass="0.1" length="0.04" radius="0.05">
+        <xacro:inertial_cylinder mass="0.1" length="0.026" radius="0.0325">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
 
@@ -131,23 +131,23 @@
     <joint name="caster_wheel_joint" type="fixed">
         <parent link="chassis"/>
         <child link="caster_wheel"/>
-        <origin xyz="0.3 0 0"/>
+        <origin xyz="0.24 0 0"/>
     </joint>
 
 
     <link name="caster_wheel">
         <visual>
             <geometry>
-                <sphere radius="0.05"/>
+                <sphere radius="0.0325"/>
             </geometry>
             <material name="black"/>
         </visual>
         <collision>
             <geometry>
-                <sphere radius="0.05"/>
+                <sphere radius="0.0325"/>
             </geometry>
         </collision>
-        <xacro:inertial_sphere mass="0.2" radius="0.05">
+        <xacro:inertial_sphere mass="0.2" radius="0.0325">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere> 
     </link>
